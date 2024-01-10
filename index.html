@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="">
+        <fieldset>
+            <legend>
+                Rock-Paper-Sissor
+            </legend>
+            <label>
+                <input type="radio" id="rock">
+                Rock
+            </label>
+            <label>
+                <input type="radio" id="paper">
+                Paper
+            </label>
+            <label>
+                <input type="radio" id="sissor">
+                Sissor
+            </label>
+            <label>
+               <button> Submit </button>
+            </label>
+        </fieldset>
+    </form>
+
+
+
+
+
+    <script>
+
+        /*
+            Rock-Paper-Sissor game against IA :
+                1-)Random-Selection of Computer-Choice :  Rock-Paper-Sissor
+                2-)Input player Choice
+                2-)Compare Player-Choice vs IA-Choice 
+                3-)Print winner 
+
+        */
+
+        function getComputerChoice () {
+            /*
+                    * INIT an array called 'choices' with 3 possible computer choice
+                    * INIT a variable called 'choice' with a value between 0-2 , it must be selected randomly each time
+                    * SWITCH :
+                       case 0 : return rock
+                       case 1 : return paper
+                       case 2 : return sissor        
+            */
+            let choices = ['rock' , 'paper' , 'sissors'];
+            let choice = Math.floor(Math.random() * 3) ; // return 0 to 2
+            switch(choice){
+                case 0 : 
+                    return 'rock';
+                    break ;
+                case 1 : 
+                    return 'paper';
+                    break ;
+                case 2 : 
+                    return  'sissor';
+                    break ;
+            }
+        }
+
+        console.log('passed');
+    </script>
+</body>
+</html>
