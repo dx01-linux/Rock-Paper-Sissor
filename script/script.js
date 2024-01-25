@@ -4,6 +4,7 @@ const playerCard = document.querySelector('#player-card').firstElementChild;
 const computerCard = document.querySelector('#computer-card').firstElementChild;
 const vsSection = document.querySelector('#vs');
 
+//get atributes from a tag 
 function getAttributes1(tagReference, ...atributes) {
     let tag = tagReference;
     let obj = {};
@@ -13,67 +14,32 @@ function getAttributes1(tagReference, ...atributes) {
     })
     return obj;
 }
-function displayPlayerChoice(tag) {
-    // get card id and class 
-    let cssRulesName = getAttributes1(tag, 'id', 'class');
-    //make a clone
-    let clone = document.createElement('div');
-    clone.setAttribute('class', cssRulesName['class']);
-    clone.setAttribute('id', cssRulesName['id']);
-    //attach to player choices
-    if (playerCard.hasChildNodes() == true) {
-        playerCard.innerHTML = '';
-        playerCard.appendChild(clone);
-    } else {
-        playerCard.appendChild(clone);
-    }
-}
 
-function displayPlayerChoice2(valueOnString = '') {
-    function setClone(tag) {
-        let atr = getAttributes1(tag, 'id', 'class');
+//display cloneSiblingTag on parent tag
+function displayChoice(choiceValue = '' ,  parentTag) {
+    
+    function setClone(cloneSibling) {
+        let atr = getAttributes1(cloneSibling, 'id', 'class');
         let clone = document.createElement('div');
         clone.setAttribute('id', atr['id']);
         clone.setAttribute('class', atr['class']);
-        playerCard.innerHTML = '';
-        playerCard.appendChild(clone);
+        return clone ;
     }
-    switch (valueOnString) {
+    switch (choiceValue) {
         case 'paper':
             let paper = document.querySelector('#paper-background-img');
-            setClone(paper)
+            parentTag.innerText = '';
+            parentTag.appendChild(setClone(paper));
             break;
         case 'rock':
             let rock = document.querySelector('#rock-background-img');
-            setClone(rock);
+            parentTag.innerText = '';
+            parentTag.appendChild(setClone(rock));
             break;
         case 'sissor':
             let sissor = document.querySelector('#sissor-background-img');
-            setClone(sissor);
-            break;
-    }
-}
-function displayComputerChoice(computerChoice = '') {
-    function setClone(tag) {
-        let atr = getAttributes1(tag, 'id', 'class');
-        let clone = document.createElement('div');
-        clone.setAttribute('id', atr['id']);
-        clone.setAttribute('class', atr['class']);
-        computerCard.innerHTML = '';
-        computerCard.appendChild(clone);
-    }
-    switch (computerChoice) {
-        case 'paper':
-            let paper = document.querySelector('#paper-background-img');
-            setClone(paper)
-            break;
-        case 'rock':
-            let rock = document.querySelector('#rock-background-img');
-            setClone(rock);
-            break;
-        case 'sissor':
-            let sissor = document.querySelector('#sissor-background-img');
-            setClone(sissor);
+            parentTag.innerText = '';
+            parentTag.appendChild(setClone(sissor));
             break;
     }
 }
@@ -81,6 +47,7 @@ function displayVsSection() {
     vsSection.innerText = '';
     vsSection.innerText = 'VS'
 }
+//return a string ['sissor', 'paper', 'rock']
 function computerChoice() {
     let computerChoices = ['sissor', 'paper', 'rock'];
     let randNumber = (min, max) => {
@@ -90,6 +57,7 @@ function computerChoice() {
     }
     return computerChoices[randNumber(0, 2)];
 }
+
 function getWinner(playerChoice, computerChoice) {
     let plyChoice = playerChoice;
     let comChoice = computerChoice;
@@ -153,13 +121,14 @@ function getWinner(playerChoice, computerChoice) {
         displayWinnerSection.innerText = 'Draw';
     }
 }
+
 function playRound(value) {
     let playerChoiceValue = value;
     let computerChocieValue = computerChoice();
     getWinner(playerChoiceValue, computerChocieValue);
-    displayPlayerChoice2(playerChoiceValue);
+    displayChoice(playerChoiceValue , playerCard); //display player card selection 
     displayVsSection();
-    displayComputerChoice(computerChocieValue);
+    displayChoice(computerChocieValue , computerCard);//display computer card selection :
 }
 
 
