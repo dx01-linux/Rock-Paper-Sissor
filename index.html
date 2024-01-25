@@ -1,75 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles/style1.css">
+    <script src="script/script.js" defer> </script>
 </head>
+
 <body>
+    <!-- level 1 centring , level-2 background , section content-->
+    <div class='level-1 hero-background-color'>
+        <div id="hero-background-img" class='level-2'>
+            <section id="hero">
+                <h1>Rock-Paper-Sissor</h1>
+            </section>
+        </div>
+    </div>
+    <div class='section-divisor'></div>
+    <div div class="level-1" id='player-choices-background-color'>
+        <div id='player-choices-section-size'>
+            <section id="player-choices">
+                <div id='player-choices-header'>
+                    <section>
+                        <h1> Click one For Playing </h1>
+                    </section>
+                </div>
+                <div id='player-choices-selections'>
+                    <div class="background-img card" id='rock-background-img'>
+                        <p> Rock beat Sissor</p>
+                    </div>
+                    <div class="background-img card" id='paper-background-img'>
+                        <p> Paper beat Rock</p>
+                    </div>
+                    <div class="background-img card" id='sissor-background-img'>
+                        <p> Sissor beat Paper</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class='section-divisor'></div>
+    <div class="level-1 hero-background-color ">
+        <div id="display-result-size">
+            <div id="display-result">
+                <div id='display-winner-section'>
+                    <h1></h1>
+                </div>
+                <div id='display-selections'>
+                    <div id='player-card'>
+                        <div></div>
+                    </div>
+                    <div>
+                        <h1 id='vs'></h1>
+                    </div>
+                    <div id='computer-card'>
+                        <div>
 
-    <form action="">
-        <fieldset>
-            <legend>
-                Rock-Paper-Sissor
-            </legend>
-            <label>
-                <input type="radio" id="rock">
-                Rock
-            </label>
-            <label>
-                <input type="radio" id="paper">
-                Paper
-            </label>
-            <label>
-                <input type="radio" id="sissor">
-                Sissor
-            </label>
-            <label>
-               <button> Submit </button>
-            </label>
-        </fieldset>
-    </form>
-
-
-
-
-
-    <script>
-
-        /*
-            Rock-Paper-Sissor game against IA :
-                1-)Random-Selection of Computer-Choice :  Rock-Paper-Sissor
-                2-)Input player Choice
-                2-)Compare Player-Choice vs IA-Choice 
-                3-)Print winner 
-
-        */
-
-        function getComputerChoice () {
-            /*
-                    * INIT an array called 'choices' with 3 possible computer choice
-                    * INIT a variable called 'choice' with a value between 0-2 , it must be selected randomly each time
-                    * SWITCH :
-                       case 0 : return rock
-                       case 1 : return paper
-                       case 2 : return sissor        
-            */
-            let choices = ['rock' , 'paper' , 'sissors'];
-            let choice = Math.floor(Math.random() * 3) ; // return 0 to 2
-            switch(choice){
-                case 0 : 
-                    return 'rock';
-                    break ;
-                case 1 : 
-                    return 'paper';
-                    break ;
-                case 2 : 
-                    return  'sissor';
-                    break ;
-            }
-        }
-
-        console.log('passed');
-    </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

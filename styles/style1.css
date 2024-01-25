@@ -1,0 +1,139 @@
+*,
+body {
+    font-family: monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.level-1 {
+    display: flex;
+    justify-content: center;
+
+}
+
+.hero-background-color {
+    background-color: rgb(194, 194, 194);
+}
+
+#hero-background-img {
+    background-image: url('/misc/hero-img1.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 80vh;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#hero {
+    align-self: center;
+    display: flex;
+    justify-content: center;
+
+    h1 {
+        font-size: 45px;
+        align-self: center;
+    }
+}
+
+.section-divisor {
+    height: 0.5vh;
+    background-color: rgb(40, 41, 41);
+}
+
+#player-choices-background-color {
+    background-color: rgb(247, 246, 246);
+}
+
+#player-choices-section-size {
+    width: 85%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#player-choices-header h1 {
+    font-size: 50px;
+}
+
+
+#player-choices-selections,
+#player-choices-header,
+#player-choices-submit-bttn {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2vh;
+}
+
+#player-choices-selections {
+    gap: 3vh;
+}
+
+.card {
+    width: 300px;
+    height: 350px;
+    border-radius: 4px;
+    border: 0.5px black solid;
+
+}
+
+.background-img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    p {
+        border: 1px rgb(194, 194, 194) solid;
+        border-radius: 6px;
+        width: 298px;
+        height: 25px;
+        background-color: rgb(194, 194, 194);
+        font-size: 18px;
+    }
+
+}
+
+#paper-background-img {
+    background-image: url('/misc/paper2.jpg');
+}
+
+#rock-background-img {
+    background-image: url('/misc/rock2.jpeg');
+}
+
+#sissor-background-img {
+    background-image: url('/misc/sissor2.png');
+}
+
+#display-result-size {
+    width: 85%;
+    display: flex;
+    justify-content: center;
+}
+
+#display-result {
+    display: flex;
+    flex-direction: column;
+
+    >div:first-child {
+        font-size: 25px;
+        align-self: center;
+    }
+
+    >div:last-child {
+        display: flex;
+    }
+}
+
+#player-card+div {
+    font-size: 35px;
+    align-self: center;
+    margin-left: 100px;
+    margin-right: 100px;
+}
